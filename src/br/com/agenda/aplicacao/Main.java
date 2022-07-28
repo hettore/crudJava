@@ -25,7 +25,12 @@ public class Main {
 		c1.setDataCadastro(new Date());
 		c1.setId(1); // é o numero que esta no banco de dados da PK
 		
-		contatoDao.update(c1);
+		//contatoDao.update(c1);
+		
+		//Deletar o contato pelo numero de ID
+		
+		contatoDao.deleteByID(3);
+		
 		
 		//Visualização dos registros do banco de dados TODOS
 		
