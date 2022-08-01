@@ -122,7 +122,7 @@ public class ContatoDAO {
 
 			pstm.execute();
 
-			System.out.println("Contato deletado com sucesso.");
+			System.out.println("Contato apagado com sucesso.");
 
 		} catch (Exception e) {
 			e.printStackTrace();

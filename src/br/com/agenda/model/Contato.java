@@ -41,4 +41,10 @@ public class Contato {
 		this.dataCadastro = dataCadastro;
 	}
 
+	public String toString() {
+		return "Id: " 
+				+ id 
+				+ " Nome: "
+				+ nome;
+	}				
 }

@@ -9,6 +9,7 @@ import br.com.agenda.model.Contato;
 public class Program {
 
 	Scanner sc = new Scanner(System.in);
+
 	ContatoDAO contatoDao = new ContatoDAO();
 
 	// Menu de navegação do aplicativo
@@ -84,39 +85,38 @@ public class Program {
 		default:
 			System.out.println("Por favor escolha uma opção válida.");
 		}
-
+		// sc.close();
 	}
 
 	// Adicionar um contato no banco de dados
 	public void adicionarContato() {
 
+		Scanner c = new Scanner(System.in);
+
 		Contato contato = new Contato();
 		System.out.println("Digite o nome a ser adicionado: ");
-		var nome = sc.next();
-		contato.setNome(nome);
+		contato.setNome(c.nextLine());
 		System.out.println("Digite a idade: ");
-		var idade = sc.nextInt();
-		contato.setIdade(idade);
+		contato.setIdade(c.nextInt());
 		contato.setDataCadastro(new Date());
 
 		contatoDao.save(contato);
+
 	}
 
 	// atualizar o contato.
 	public void atualizar() {
+		
+		Scanner c = new Scanner(System.in);
 
 		Contato c1 = new Contato();
 		System.out.println("Digite um novo nome: ");
-		var novoNome = sc.next();
-
-		c1.setNome(novoNome);
+		c1.setNome(c.nextLine());
 		System.out.println("Digite a nova idade: ");
-		var novaIdade = sc.nextInt();
-		c1.setIdade(novaIdade);
+		c1.setIdade(c.nextInt());
 		c1.setDataCadastro(new Date());
 		System.out.println("digite o id do contato a ser atualizado: ");
-		var identificacao = sc.nextInt();
-		c1.setId(identificacao); // é o numero que esta no banco de dados da PK
+		c1.setId(c.nextInt()); // é o numero que esta no banco de dados da PK
 
 		contatoDao.update(c1);
 	}
@@ -125,17 +125,17 @@ public class Program {
 	public void deletar() {
 
 		System.out.println("Por favor para deletar um contato insira o id: ");
-		var deletarId = sc.nextInt();
-		contatoDao.deleteByID(deletarId);
+		contatoDao.deleteByID(sc.nextInt());
 	}
 
 	// Visualização dos registros do banco de dados TODOS
 	public void mostrar() {
-		for (Contato c : contatoDao.getContatos()) {
-			System.out.println("Id: " + c.getId() + " " + "Nome: " + c.getNome());
-		}
-	}
 
-	// sc.close();
+//		for (Contato c : contatoDao.getContatos()) {
+//			System.out.println("Id: " + c.getId() + " " + "Nome: " + c.getNome());
+//		}
+
+		contatoDao.getContatos().forEach(System.out::println);
+	}
 
 }
