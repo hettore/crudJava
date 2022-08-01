@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class ConnectionFactory {
 
-	// nome do usuario do mysql
+	// Nome do usuário do mysql
 	private static final String USERNAME = "root";
 
 	// Senha do banco

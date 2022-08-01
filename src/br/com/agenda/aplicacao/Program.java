@@ -108,6 +108,7 @@ public class Program {
 		Contato c1 = new Contato();
 		System.out.println("Digite um novo nome: ");
 		var novoNome = sc.next();
+
 		c1.setNome(novoNome);
 		System.out.println("Digite a nova idade: ");
 		var novaIdade = sc.nextInt();
@@ -131,7 +132,7 @@ public class Program {
 	// Visualização dos registros do banco de dados TODOS
 	public void mostrar() {
 		for (Contato c : contatoDao.getContatos()) {
-			System.out.println("contato e id: " + c.getNome() + c.getId());
+			System.out.println("Id: " + c.getId() + " " + "Nome: " + c.getNome());
 		}
 	}
 
