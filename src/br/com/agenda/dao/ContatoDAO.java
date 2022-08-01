@@ -19,7 +19,6 @@ public class ContatoDAO {
 
 	public void save(Contato contato) {
 
-
 		String sql = "INSERT INTO contatos(nome, idade, datacadastro) VALUES(?, ?, ?)";
 
 		Connection conn = null;
@@ -59,153 +58,147 @@ public class ContatoDAO {
 			}
 		}
 	}
-	
-	
 
-	
 	public void update(Contato contato) {
-		
-		String sql = "UPDATE contatos SET nome = ?, idade = ?, datacadastro = ? " +
-		"WHERE id = ?";
-		
+
+		String sql = "UPDATE contatos SET nome = ?, idade = ?, datacadastro = ? " + "WHERE id = ?";
+
 		Connection conn = null;
 		PreparedStatement pstm = null;
-		
+
 		try {
-			//criar conexão com o banco
+			// criar conexão com o banco
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			//criar a classe para executar a query
+
+			// criar a classe para executar a query
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
-			
-			//adicionar os valores para atualizar
+
+			// adicionar os valores para atualizar
 			pstm.setString(1, contato.getNome());
 			pstm.setInt(2, contato.getIdade());
 			pstm.setDate(3, new Date(contato.getDataCadastro().getTime()));
-			
-			//qual o id do registro que deseja atualizar
+
+			// qual o id do registro que deseja atualizar
 			pstm.setInt(4, contato.getId());
-			
-			//executar a query
+
+			// executar a query
 			pstm.execute();
-			
-		}catch (Exception e) {
+
+			System.out.println("Update realizado com sucesso.");
+
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
-				if(pstm!=null) {
+				if (pstm != null) {
 					pstm.close();
-				
-				}if(conn!=null) {
-				conn.close();
+
 				}
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-			
-	}
-	
-}	
-	
-	
-	
-	public void deleteByID(int id) {
-		
-		String sql = "DELETE FROM contatos WHERE id = ?";
-		
-		Connection conn = null;
-		
-		PreparedStatement pstm = null;
-		
-		try {
-			conn = ConnectionFactory.createConnectionToMySQL();
-			
-			pstm = (PreparedStatement) conn.prepareStatement(sql);
-			
-			pstm.setInt(1, id);
-			
-			pstm.execute();
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				if(pstm!=null) {
-					pstm.close();
-				}
-				if(conn!=null) {
+				if (conn != null) {
 					conn.close();
 				}
-			
-			}catch (Exception e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
-				
-		}
-	}
-	
-	
-	
 
-	public List<Contato> getContatos(){
-		
-		String sql = "SELECT * FROM contatos";
-		
-		List<Contato> contatos = new ArrayList<Contato>();
-		
+		}
+
+	}
+
+	public void deleteByID(int id) {
+
+		String sql = "DELETE FROM contatos WHERE id = ?";
+
 		Connection conn = null;
+
 		PreparedStatement pstm = null;
-		//Classe que vai recuperar os dados do banco. SELECT
-		ResultSet rset = null;
-		
+
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
-			
+
 			pstm = (PreparedStatement) conn.prepareStatement(sql);
-			
-			rset = pstm.executeQuery();
-			
-			while (rset.next()) {
-				
-				Contato contato = new Contato();
-				
-				//recuperar o id
-				contato.setId(rset.getInt("id"));
-				//recuperar o nome
-				contato.setNome(rset.getString("nome"));
-				//recuperar a idade
-				contato.setIdade(rset.getInt("idade"));
-				//recuperar a data de cadastro
-				contato.setDataCadastro(rset.getDate("datacadastro"));
-				
-				contatos.add(contato);
-				
+
+			pstm.setInt(1, id);
+
+			pstm.execute();
+
+			System.out.println("Contato deletado com sucesso.");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
 				}
-			}catch (Exception e) {
-				e.printStackTrace();
-			}finally {
-				
-				try {
-					if (rset != null) {
-						rset.close();	
-					}
-			
-					if (pstm!=null) {
-						pstm.close();
-					}
-			
-					if(conn!=null) {
-						conn.close();
-					}
-			
-				}catch (Exception e) {
-				e.printStackTrace();
+				if (conn != null) {
+					conn.close();
 				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-			
-			return contatos;
-		
+
+		}
+	}
+
+	public List<Contato> getContatos() {
+
+		String sql = "SELECT * FROM contatos";
+
+		List<Contato> contatos = new ArrayList<Contato>();
+
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		// Classe que vai recuperar os dados do banco. SELECT
+		ResultSet rset = null;
+
+		try {
+			conn = ConnectionFactory.createConnectionToMySQL();
+
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+			rset = pstm.executeQuery();
+
+			while (rset.next()) {
+
+				Contato contato = new Contato();
+
+				// recuperar o id
+				contato.setId(rset.getInt("id"));
+				// recuperar o nome
+				contato.setNome(rset.getString("nome"));
+				// recuperar a idade
+				contato.setIdade(rset.getInt("idade"));
+				// recuperar a data de cadastro
+				contato.setDataCadastro(rset.getDate("datacadastro"));
+
+				contatos.add(contato);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if (rset != null) {
+					rset.close();
+				}
+
+				if (pstm != null) {
+					pstm.close();
+				}
+
+				if (conn != null) {
+					conn.close();
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return contatos;
+
 	}
 }
-
-		
