@@ -84,7 +84,7 @@ public class ContatoDAO {
 			// executar a query
 			pstm.execute();
 
-			System.out.println("Update realizado com sucesso.");
+			System.out.println("Atualização realizada com sucesso.");
 
 		} catch (Exception e) {
 			e.printStackTrace();

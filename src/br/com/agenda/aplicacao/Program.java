@@ -32,6 +32,7 @@ public class Program {
 
 			System.out.println();
 			adicionarContato();
+			System.out.println();
 			System.out.println("---------------------------------");
 			System.out.println("voltando para o menu inicial.");
 			System.out.println("---------------------------------");
@@ -124,8 +125,22 @@ public class Program {
 	// Deletar o contato pelo numero de ID
 	public void deletar() {
 
-		System.out.println("Por favor para deletar um contato insira o id: ");
-		contatoDao.deleteByID(sc.nextInt());
+		System.out.println("Por favor para apagar um contato insira o id: ");
+		int selecao = sc.nextInt();
+		System.out.println("Tem certeza que deseja apagar o contato que esta na posição:  " + selecao + " s/n?");
+		String escolha = sc.next();
+		if (escolha.equals("s")) {
+		
+		contatoDao.deleteByID(selecao);
+		} else if (escolha.equals("n")) {
+			System.out.println("Contato não foi apagado.");
+			System.out.println("Voltando para o menu.");
+			menu();
+		} else {
+			System.out.println("por favor insira um valor válido");
+			System.out.println("Voltando para o menu.");
+			menu();
+		}
 	}
 
 	// Visualização dos registros do banco de dados TODOS
