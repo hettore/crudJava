@@ -127,7 +127,7 @@ public class Program {
 
 		System.out.println("Por favor para apagar um contato insira o id: ");
 		int selecao = sc.nextInt();
-		System.out.println("Tem certeza que deseja apagar o contato que esta na posição:  " + selecao + " s/n?");
+		System.out.println("Tem certeza que deseja apagar o contato que esta na posição: " + selecao + " s/n?");
 		String escolha = sc.next();
 		if (escolha.equals("s")) {
 		
