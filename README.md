@@ -7,11 +7,12 @@ data do cadastro e também é gerado uma chave primária para a identificação 
 <br>
 
 Logo na primeira tela você tem um menu para conseguir navegar entre as opções <br>
-relacionadas ao CRUD (Create, Read, Update e delete). As operações são feitas pelo <br>
-console e como foi feito em Java é necessário ter o kit java instalado e uma IDE para rodar o projeto. <br>
+relacionadas ao CRUD (Create, Read, Update e Delete). As operações são feitas pelo <br>
+console e como foi feito em Java é necessário ter o kit Java instalado e uma IDE para rodar o projeto. <br>
 <br>
 Na primeira imagem demonstro a opção 1 que adiciona um contato no banco de dados. <br>
-Já a segunda imagem demonstro a atualização de um contato existente e vale lembrar que para fazer essa atualização <br>
+Já a segunda imagem demonstro a atualização de um contato existente. Vale lembrar que para fazer essa <br>
+atualização 
 é necessário saber o id do contato a ser atualizado.
 
                                                                                               
@@ -21,14 +22,14 @@ Já a segunda imagem demonstro a atualização de um contato existente e vale le
 <br>
 
 Na terceira imagem demostro o uso da opção 4 que mostra na tela os contatos <br>
-que já estão salvos no banco de dados com o id e o nome. 
+que já estão salvos no banco de dados, com o id e o nome:
 <br>
 
 ![tela3crud](https://user-images.githubusercontent.com/24979432/182384076-5bbc51fd-6306-416d-b1cd-b396a8a4842c.png) 
 
 <br>
 
-Na quarta imagem demonstro a opção 3 que apaga um contato a partir do id 
+Na quarta imagem demonstro a opção 3 que apaga um contato a partir do id: 
 <br>
 
 ![tela4crud](https://user-images.githubusercontent.com/24979432/182384586-3cddc655-a0d8-4a4c-86f7-10311e73590b.png)
