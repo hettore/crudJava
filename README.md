@@ -1,13 +1,13 @@
 # CRUD em Java
 
-Integrando java com banco de dados MySQL usando o DAO(Data access object), <br>
+Integrando java com banco de dados MySQL usando o DAO (Data access object), <br>
 A ideia inicial é armazenar um contato e aqui salvamos: nome, idade, <br>
 data do cadastro e também é gerado uma chave primária para a identificação de cada posição da lista. 
 
 <br>
 
 Logo na primeira tela você tem um menu para conseguir navegar entre as opções <br>
-relacionadas ao CRUD(Create, Read, Update e delete). As operações são feitas pelo <br>
+relacionadas ao CRUD (Create, Read, Update e delete). As operações são feitas pelo <br>
 console e como foi feito em Java é necessário ter o kit java instalado e uma IDE para rodar o projeto. <br>
 <br>
 Na primeira imagem demonstro a opção 1 que adiciona um contato no banco de dados. <br>
