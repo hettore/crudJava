@@ -6,14 +6,14 @@ data do cadastro e também é gerado uma chave primária para a identificação 
 
 <br>
 
-Logo na primeira tela você tem um menu para conseguir navegar entre as opções <br>
+Na tela inicial você tem um menu para conseguir navegar entre as opções <br>
 relacionadas ao CRUD (Create, Read, Update e Delete). As operações são feitas pelo <br>
 console e como foi feito em Java é necessário ter o kit Java instalado e uma IDE para rodar o projeto. <br>
 <br>
-Na primeira imagem demonstro a opção 1 que adiciona um contato no banco de dados. <br>
-Já a segunda imagem demonstro a atualização de um contato existente. Vale lembrar que para fazer essa <br>
+Na 1º imagem demonstro a opção 1 que adiciona um contato no banco de dados. <br>
+Já a 2º imagem demonstro a atualização de um contato existente. Vale lembrar que para fazer essa <br>
 atualização 
-é necessário saber o id do contato a ser atualizado.
+é necessário saber o id do contato a ser atualizado:
 
                                                                                               
 ![tela1crud](https://user-images.githubusercontent.com/24979432/182383594-9cda5055-35f9-45b7-9a5f-fc13e2d9b1b3.png) | ![tela2crudpng](https://user-images.githubusercontent.com/24979432/182383349-76fac3a5-0292-4294-9306-63387141d0a9.png)
@@ -21,7 +21,7 @@ atualização
 
 <br>
 
-Na terceira imagem demostro o uso da opção 4 que mostra na tela os contatos <br>
+Na 3º imagem demostro o uso da opção 4 que mostra na tela os contatos <br>
 que já estão salvos no banco de dados, com o id e o nome:
 <br>
 
@@ -29,16 +29,16 @@ que já estão salvos no banco de dados, com o id e o nome:
 
 <br>
 
-Na quarta imagem demonstro a opção 3 que apaga um contato a partir do id: 
+Na 4º imagem demonstro a opção 3 que apaga um contato a partir do id: 
 <br>
 
 ![tela4crud](https://user-images.githubusercontent.com/24979432/182384586-3cddc655-a0d8-4a4c-86f7-10311e73590b.png)
 
 
 <br>
-Na quinta imagem demonstro novamente a opção 4 mostrando que a posição de id 19 <br>
-foi apagada pelo passo anterior.
-Na sexta e última imagem do programa demonstro o encerramento do programa usando a opção 5. <br>
+Na 5º imagem demonstro novamente a opção 4 mostrando que a posição de id 19 
+foi apagada pelo passo anterior. <br>
+Na 6º e última imagem do programa demonstro o encerramento do programa usando a opção 5: <br>
 
 <br>
 
