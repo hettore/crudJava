@@ -1,6 +1,6 @@
 # CRUD em Java
 
-Integrando java com banco de dados MySQL usando o DAO (Data access object), <br>
+Integrando java com banco de dados relacional MySQL usando o DAO (Data access object), <br>
 A ideia inicial é armazenar um contato e aqui salvamos: nome, idade, <br>
 data do cadastro e também é gerado uma chave primária para a identificação de cada posição da lista. 
 
@@ -61,6 +61,8 @@ Comando que mostra/seleciona todas (*) as posições de agenda.contatos. <br>
 <br>
 
 ![bancodedados2png](https://user-images.githubusercontent.com/24979432/182390769-acfa925d-23bc-4a42-859d-36e56dc441bf.png)
+
+
 
 
 
